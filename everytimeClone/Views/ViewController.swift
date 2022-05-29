@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  everytimeClone
 //
-//  Created by LrUCiA on 2022/05/28.
+//  Created by LrUCiA.
 //
 
 import UIKit
