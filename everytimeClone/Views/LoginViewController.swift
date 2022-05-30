@@ -10,6 +10,7 @@ import UIKit
 
 final class LoginViewController: UIViewController {
     
+    // 에브리타임 로고
     private let titleImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -83,6 +84,7 @@ final class LoginViewController: UIViewController {
         return button
     }()
     
+    /// 로그인 화면 레이아웃
     private let container: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -107,6 +109,7 @@ final class LoginViewController: UIViewController {
         self.container.addArrangedSubview(self.loginButton)
         self.container.addArrangedSubview(self.signupButton)
         
+        // custom spacing 추가
         self.container.setCustomSpacing(10, after: self.titleImageView)
         self.container.setCustomSpacing(46, after: self.titleLabel)
         self.container.setCustomSpacing(30, after: self.loginButton)
@@ -132,6 +135,7 @@ final class LoginViewController: UIViewController {
             self.loginButton.trailingAnchor.constraint(equalTo: self.container.trailingAnchor)
         ])
         
+        self.loginButton.addTarget(self, action: #selector(onPressLoginButton), for: .touchUpInside)
         self.centerYConstraint = constraint
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewDidTap))
         self.view.addGestureRecognizer(tapGesture)
@@ -140,19 +144,15 @@ final class LoginViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        // keyboard 감시자함수 실행
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        // keyboard 감시자 제거
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    // MARK: - Keyboard Actions
     
     @objc func keyboardWillShow(notification: Notification) {
         
@@ -162,14 +162,14 @@ final class LoginViewController: UIViewController {
         else {
             return
         }
-        let keyboardHeight = keyboardFrame.height
         
-        // 키보드 창 열릴 시 화면을 위로 올림
+        
+        self.centerYConstraint?.constant = -keyboardFrame.height
         UIView.animate(withDuration: duration) {
             [self.titleImageView, self.descriptionLabel, self.titleLabel, self.signupButton].forEach { view in
-                view.alpha = 0 // 화면 올라갈 시 로고 투명화
+                view.alpha = 0
             }
-            self.centerYConstraint?.constant = -keyboardHeight
+            self.centerYConstraint?.constant = -keyboardFrame.height
             self.view.layoutIfNeeded()
         }
 
@@ -182,7 +182,7 @@ final class LoginViewController: UIViewController {
             return
         }
         
-        // 키보드가 내려가면 화면도 원래대로
+        self.centerYConstraint?.constant = 0
         UIView.animate(withDuration: duration) {
             [self.titleImageView, self.descriptionLabel, self.titleLabel, self.signupButton].forEach { view in
                 view.alpha = 1
@@ -192,12 +192,17 @@ final class LoginViewController: UIViewController {
         }
     }
     
-    // 키보드 외부 터치시 키보드 내리기
     @objc func viewDidTap(gesture: UITapGestureRecognizer) {
         self.view.endEditing(true)
     }
-
+    
+    @objc func onPressLoginButton(sender: Any) {
+        let nav = UINavigationController()
+        nav.modalPresentationStyle = .fullScreen
+        nav.navigationBar.barTintColor = .white
+        nav.navigationBar.tintColor = UIColor(w: 42)
+        let controller = BoardTableViewController()
+        nav.viewControllers = [controller]
+        self.present(nav, animated: true, completion: nil)
+    }
 }
-
-
-
