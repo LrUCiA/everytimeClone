@@ -63,4 +63,10 @@ class BoardTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = DetailViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    
 }

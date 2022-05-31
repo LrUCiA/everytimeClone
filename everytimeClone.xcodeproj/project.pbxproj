@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F835417F284647D80096D290 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F835417E284647D80096D290 /* DetailViewController.swift */; };
+		F8354185284648E40096D290 /* DetailCommentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8354184284648E40096D290 /* DetailCommentsViewCell.swift */; };
+		F83541872846493B0096D290 /* CommentReactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83541862846493B0096D290 /* CommentReactionsView.swift */; };
+		F83541892846496B0096D290 /* CommentWriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83541882846496B0096D290 /* CommentWriteView.swift */; };
+		F835418B28464AA80096D290 /* DetailContentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F835418A28464AA80096D290 /* DetailContentsView.swift */; };
 		F83C49BF2844DD4E009D2283 /* BoardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C49BE2844DD4E009D2283 /* BoardTableViewController.swift */; };
 		F83C49C12844DD85009D2283 /* BoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C49C02844DD85009D2283 /* BoardTableViewCell.swift */; };
 		F83C49C32844DDD2009D2283 /* ReactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83C49C22844DDD2009D2283 /* ReactionView.swift */; };
@@ -22,6 +27,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F835417E284647D80096D290 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F8354184284648E40096D290 /* DetailCommentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCommentsViewCell.swift; sourceTree = "<group>"; };
+		F83541862846493B0096D290 /* CommentReactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentReactionsView.swift; sourceTree = "<group>"; };
+		F83541882846496B0096D290 /* CommentWriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWriteView.swift; sourceTree = "<group>"; };
+		F835418A28464AA80096D290 /* DetailContentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentsView.swift; sourceTree = "<group>"; };
 		F83C49BE2844DD4E009D2283 /* BoardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewController.swift; sourceTree = "<group>"; };
 		F83C49C02844DD85009D2283 /* BoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardTableViewCell.swift; sourceTree = "<group>"; };
 		F83C49C22844DDD2009D2283 /* ReactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionView.swift; sourceTree = "<group>"; };
@@ -49,6 +59,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F835417C284646990096D290 /* Board */ = {
+			isa = PBXGroup;
+			children = (
+				F83C49BE2844DD4E009D2283 /* BoardTableViewController.swift */,
+				F83C49C02844DD85009D2283 /* BoardTableViewCell.swift */,
+				F83C49C22844DDD2009D2283 /* ReactionView.swift */,
+				F83C49C62844DE4E009D2283 /* NavigationTitleView.swift */,
+			);
+			path = Board;
+			sourceTree = "<group>";
+		};
+		F835417D284646B50096D290 /* BoardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F835417E284647D80096D290 /* DetailViewController.swift */,
+				F835418A28464AA80096D290 /* DetailContentsView.swift */,
+				F8354184284648E40096D290 /* DetailCommentsViewCell.swift */,
+				F83541862846493B0096D290 /* CommentReactionsView.swift */,
+				F83541882846496B0096D290 /* CommentWriteView.swift */,
+			);
+			path = BoardDetail;
+			sourceTree = "<group>";
+		};
 		F88827A0284364110033BF17 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,10 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				F878F52C28431F6D003DAF39 /* LoginViewController.swift */,
-				F83C49BE2844DD4E009D2283 /* BoardTableViewController.swift */,
-				F83C49C02844DD85009D2283 /* BoardTableViewCell.swift */,
-				F83C49C22844DDD2009D2283 /* ReactionView.swift */,
-				F83C49C62844DE4E009D2283 /* NavigationTitleView.swift */,
+				F835417C284646990096D290 /* Board */,
+				F835417D284646B50096D290 /* BoardDetail */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -188,15 +219,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83541892846496B0096D290 /* CommentWriteView.swift in Sources */,
 				F878F52D28431F6D003DAF39 /* LoginViewController.swift in Sources */,
 				F83C49C32844DDD2009D2283 /* ReactionView.swift in Sources */,
 				F8A84DFF28421FC1006663DB /* AppDelegate.swift in Sources */,
 				F8A84E0128421FC1006663DB /* SceneDelegate.swift in Sources */,
 				F888279F284363EE0033BF17 /* UIColor+Extension.swift in Sources */,
 				F88827A2284364270033BF17 /* InsetTextField.swift in Sources */,
+				F8354185284648E40096D290 /* DetailCommentsViewCell.swift in Sources */,
 				F83C49C72844DE4E009D2283 /* NavigationTitleView.swift in Sources */,
+				F835418B28464AA80096D290 /* DetailContentsView.swift in Sources */,
+				F835417F284647D80096D290 /* DetailViewController.swift in Sources */,
 				F83C49C12844DD85009D2283 /* BoardTableViewCell.swift in Sources */,
 				F83C49BF2844DD4E009D2283 /* BoardTableViewController.swift in Sources */,
+				F83541872846493B0096D290 /* CommentReactionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -154,6 +154,7 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    // 키보드 올라감 감시자
     @objc func keyboardWillShow(notification: Notification) {
         
         guard let userInfo = notification.userInfo,
@@ -175,6 +176,7 @@ final class LoginViewController: UIViewController {
 
     }
     
+    // 키보드 내려감 감시자
     @objc func keyboardWillHide(notification: Notification) {
         guard let userInfo = notification.userInfo,
               let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double

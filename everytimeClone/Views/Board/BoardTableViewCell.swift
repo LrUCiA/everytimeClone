@@ -32,7 +32,7 @@ class BoardTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         label.textColor = UIColor(w: 166)
         label.textAlignment = .right
-        label.text = "27분 전"
+        label.text = "15분 전"
         label.numberOfLines = 1
         return label
     }()
@@ -49,7 +49,7 @@ class BoardTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.textColor = UIColor(w: 68)
         label.textAlignment = .left
-        label.text = "걸러야하는 연구실 몇개 있는데… ㅋㅋ 무서워서 못 말하겠다"
+        label.text = "야 ㅋㅋㅋ 당연하지 학식 왜 먹냐? 후문 쪽에 맛집 댕많은데"
         label.numberOfLines = 0
         return label
     }()

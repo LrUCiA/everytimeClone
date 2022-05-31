@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "detail_reply_like.png",
+      "filename" : "detail_comment.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "detail_reply_like@2x.png",
+      "filename" : "detail_reply_comment@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "detail_reply_like@3x.png",
+      "filename" : "detail_comment@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
